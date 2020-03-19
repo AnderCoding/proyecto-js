@@ -1,0 +1,62 @@
+[
+    {
+        "producto": "Lechuga",
+        "kg": 80
+    },
+    {
+        "producto": "Tomate",
+        "kg": 15
+    },
+    {
+        "producto": "pimiento rojo",
+        "kg": 50
+    },
+    {
+        "producto": "pimiento verde",
+        "kg": 42
+    },
+    {
+        "producto": "pimiento del padron",
+        "kg": 50
+    },
+    {
+        "producto": "alubia pinta",
+        "kg": 24
+    },
+    {
+        "producto": "lenteja parda",
+        "kg": 123
+    },
+    {
+        "producto": "romanescu",
+        "kg": 34
+    },
+    {
+        "producto": "tomate feo de tudela",
+        "kg": 32
+    },
+    {
+        "producto": "coliflor",
+        "kg": 43
+    },
+    {
+        "producto": "patata alavesa",
+        "kg": 23
+    },
+    {
+        "producto": "berza",
+        "kg": 23
+    },
+    {
+        "producto": "brocoli",
+        "kg": 43
+    },
+    {
+        "producto": "berenjena",
+        "kg": 43
+    },
+    {
+        "producto": "Pepino",
+        "kg": 23
+    }
+]

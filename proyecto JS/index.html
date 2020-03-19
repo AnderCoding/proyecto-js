@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <script>
+
+
+
+
+
+        function existencias() {
+
+
+
+            var req = new XMLHttpRequest();
+
+            req.open("GET", "duras.json", true);
+
+            req.onreadystatechange = function () {
+
+                if (this.readyState === 4 && this.status === 200) {
+
+
+                    var duras = JSON.parse(this.responseText);
+
+                    var cont = document.getElementById("container");
+                    var boton = document.getElementById("ex");
+                    var celda = document.createElement("th");
+
+                    boton.remove();
+                    var tabla = document.createElement("table");
+                    var tBody = document.createElement("tbody");
+                    array = new Array("Producto", "Cantidad disponible");
+
+                    //creamos la cabaecera de la tabla
+
+                    var fila = document.createElement("tr");
+
+                    for (var c of array) {
+
+                        //creacion elementos
+                        var cab = document.createElement("th");
+                        var cabTxt = document.createTextNode(c);
+                        //fusion
+                        cab.appendChild(cabTxt);
+                        fila.appendChild(cab);
+
+                    }
+
+                    tBody.appendChild(fila);
+
+                    var i = 1;
+                    for (var it of duras) {
+
+
+                        //Creamos la fila
+                        fila = document.createElement("tr");
+                        //creamos el index de cada fila para acceder a el mas adelante
+                        var nFila = document.createAttribute("num");
+                        nFila.value = i;
+                        fila.setAttributeNode(nFila);
+
+                        //evento click para la fila
+                        fila.onclick = function () {
+                            var borrar=document.getElementById("borrar")
+                            if(borrar!=null)
+                            {
+                                borrar.remove();
+                            }
+
+                            //creamos un id
+                            var nID = document.createAttribute("id");
+                            nID.value = "borrar";
+                            
+                            var newFila = tabla.insertRow(parseInt(this.getAttribute("num")) + 1);
+                            newFila.setAttributeNode(nID);
+                            newFila.appendChild(document.createTextNode("Comprar"));
+                            
+                        };
+
+                        var prod = document.createElement("td");
+                        var prodTxt = document.createTextNode(it.producto);
+                        prod.appendChild(prodTxt);
+
+
+                        var cant = document.createElement("td");
+                        var cantTxt = document.createTextNode(it.kg);
+                        cant.appendChild(cantTxt);
+
+                        fila.appendChild(prod);
+                        fila.appendChild(cant);
+
+                        tBody.appendChild(fila);
+
+
+
+                        i++;
+
+                    }
+
+                    //fusion tbody/tabla  tabla/div
+
+                    tabla.appendChild(tBody);
+                    tabla.classList.add("responsive-table");
+                    tabla.classList.add("highlight");
+                    tabla.classList.add("centered");
+
+
+                    cont.appendChild(tabla);
+
+                }
+            }
+            req.send();
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="row">
+
+        <div clas="row" class="col s3 offset-s3" id="container">
+            <input type="button" value="existencias" id="ex" onclick="existencias()">
+        </div>
+
+
+    </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <!--JavaScript at end of body for optimized loading-->
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
