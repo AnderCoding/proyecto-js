@@ -11,6 +11,277 @@
 
 
     <script>
+        function Carrito() {
+            this.lechuga = 0;
+            this.tomate = 0;
+            this.pimientoR = 0;
+            this.pimientoV = 0;
+            this.pimientoP = 0;
+            this.alubia = 0;
+            this.lente = 0;
+            this.romanescu = 0;
+            this.tomateT = 0;
+            this.coliflor = 0
+            this.patata = 0;
+            this.berza = 0;
+            this.brocoli = 0;
+            this.berenjena = 0;
+            this.pepino = 0;
+
+            Carrito.prototype.llenar = function (tipo, cant) {
+                cant = parseInt(cant);
+                switch (tipo) {
+                    case "Lechuga":
+                        this.lechuga += cant;
+
+                        break;
+                    case "Tomate":
+                        this.tomate += cant;
+
+                        break;
+                    case "pimiento rojo":
+                        this.pimientoR += cant;
+
+                        break;
+                    case "pimiento verde":
+                        this.pimientoV += cant;
+                        break;
+                    case "pimiento del padron":
+                        this.piminentoP += cant;
+                        break;
+                    case "alubia pinta":
+                        this.alubia += cant;
+                        break;
+                    case "lenteja parda":
+                        this.lente += cant;
+                        break;
+                    case "romanescu":
+                        this.romanescu += cant;
+                        break;
+                    case "tomate feo de tudela":
+                        this.tomateT += cant;
+                        break;
+                    case "coliflor":
+                        this.coliflor += cant;
+                        break;
+                    case "patata alavesa":
+                        this.patata += cant;
+                        break;
+                    case "berza":
+                        this.berza += cant;
+                        break;
+                    case "brocoli":
+                        this.brocoli += cant;
+                        break;
+                    case "berenjena":
+                        this.berenjena += cant;
+                        break;
+                    case "Pepino":
+                        this.pepino += cant;
+                        break;
+
+                    default:
+                        break;
+
+
+                }//fin swich
+
+            }//fin llenar
+
+
+        }//fin clase carrito
+
+        function pintarCarro(carro) {
+            var divcar = document.getElementById("carrito");
+            divcar.innerHTML="";
+            var ctable = document.createElement("table");
+            var ctbody = document.createElement("tbody")
+
+            if (carro.lechuga > 0) {
+                var cfila = document.createElement("tr");
+                var cnom = document.createElement("td");
+                var cnomtxt = document.createTextNode("lechuga")
+                cnom.appendChild(cnomtxt);
+                var ccant = document.createElement("td");
+                var cctext = document.createTextNode(carro.lechuga);
+                ccant.appendChild(cctext);
+                cfila.appendChild(cnom);
+                cfila.appendChild(ccant);
+                ctbody.appendChild(cfila);
+            }
+            if (carro.tomate > 0) {
+                var cfila = document.createElement("tr");
+                var cnom = document.createElement("td");
+                var cnomtxt = document.createTextNode("tomate")
+                cnom.appendChild(cnomtxt);
+                var ccant = document.createElement("td");
+                var cctext = document.createTextNode(carro.tomate);
+                ccant.appendChild(cctext);
+                cfila.appendChild(cnom);
+                cfila.appendChild(ccant);
+                ctbody.appendChild(cfila);
+            }
+            if (carro.pimientoR > 0) {
+                var cfila = document.createElement("tr");
+                var cnom = document.createElement("td");
+                var cnomtxt = document.createTextNode("pimiento Rojo")
+                cnom.appendChild(cnomtxt);
+                var ccant = document.createElement("td");
+                var cctext = document.createTextNode(carro.pimientoR);
+                ccant.appendChild(cctext);
+                cfila.appendChild(cnom);
+                cfila.appendChild(ccant);
+                ctbody.appendChild(cfila);
+            }
+            if (carro.pimientoV > 0) {
+                var cfila = document.createElement("tr");
+                var cnom = document.createElement("td");
+                var cnomtxt = document.createTextNode("pimientoV")
+                cnom.appendChild(cnomtxt);
+                var ccant = document.createElement("td");
+                var cctext = document.createTextNode(carro.pimientoV);
+                ccant.appendChild(cctext);
+                cfila.appendChild(cnom);
+                cfila.appendChild(ccant);
+                ctbody.appendChild(cfila);
+            }
+            if (carro.pimientoP > 0) {
+                var cfila = document.createElement("tr");
+                var cnom = document.createElement("td");
+                var cnomtxt = document.createTextNode("pimientoP")
+                cnom.appendChild(cnomtxt);
+                var ccant = document.createElement("td");
+                var cctext = document.createTextNode(carro.pimientoP);
+                ccant.appendChild(cctext);
+                cfila.appendChild(cnom);
+                cfila.appendChild(ccant);
+                ctbody.appendChild(cfila);
+            }
+            if (carro.alubia > 0) {
+                var cfila = document.createElement("tr");
+                var cnom = document.createElement("td");
+                var cnomtxt = document.createTextNode("alubia")
+                cnom.appendChild(cnomtxt);
+                var ccant = document.createElement("td");
+                var cctext = document.createTextNode(carro.alubia);
+                ccant.appendChild(cctext);
+                cfila.appendChild(cnom);
+                cfila.appendChild(ccant);
+                ctbody.appendChild(cfila);
+            }
+            if (carro.lente > 0) {
+                var cfila = document.createElement("tr");
+                var cnom = document.createElement("td");
+                var cnomtxt = document.createTextNode("lentejas")
+                cnom.appendChild(cnomtxt);
+                var ccant = document.createElement("td");
+                var cctext = document.createTextNode(carro.lente);
+                ccant.appendChild(cctext);
+                cfila.appendChild(cnom);
+                cfila.appendChild(ccant);
+                ctbody.appendChild(cfila);
+            }
+            if (carro.romanescu > 0) {
+                var cfila = document.createElement("tr");
+                var cnom = document.createElement("td");
+                var cnomtxt = document.createTextNode("romanescu")
+                cnom.appendChild(cnomtxt);
+                var ccant = document.createElement("td");
+                var cctext = document.createTextNode(carro.romanescu);
+                ccant.appendChild(cctext);
+                cfila.appendChild(cnom);
+                cfila.appendChild(ccant);
+                ctbody.appendChild(cfila);
+            }
+            if (carro.tomateT > 0) {
+                var cfila = document.createElement("tr");
+                var cnom = document.createElement("td");
+                var cnomtxt = document.createTextNode("tomate Tudela")
+                cnom.appendChild(cnomtxt);
+                var ccant = document.createElement("td");
+                var cctext = document.createTextNode(carro.tomateT);
+                ccant.appendChild(cctext);
+                cfila.appendChild(cnom);
+                cfila.appendChild(ccant);
+                ctbody.appendChild(cfila);
+            }
+            if (carro.coliflor > 0) {
+                var cfila = document.createElement("tr");
+                var cnom = document.createElement("td");
+                var cnomtxt = document.createTextNode("coliflor")
+                cnom.appendChild(cnomtxt);
+                var ccant = document.createElement("td");
+                var cctext = document.createTextNode(carro.coliflor);
+                ccant.appendChild(cctext);
+                cfila.appendChild(cnom);
+                cfila.appendChild(ccant);
+                ctbody.appendChild(cfila);
+            }
+            if (carro.patata > 0) {
+                var cfila = document.createElement("tr");
+                var cnom = document.createElement("td");
+                var cnomtxt = document.createTextNode("patata")
+                cnom.appendChild(cnomtxt);
+                var ccant = document.createElement("td");
+                var cctext = document.createTextNode(carro.patata);
+                ccant.appendChild(cctext);
+                cfila.appendChild(cnom);
+                cfila.appendChild(ccant);
+                ctbody.appendChild(cfila);
+            }
+            if (carro.brocoli > 0) {
+                var cfila = document.createElement("tr");
+                var cnom = document.createElement("td");
+                var cnomtxt = document.createTextNode("brocoli")
+                cnom.appendChild(cnomtxt);
+                var ccant = document.createElement("td");
+                var cctext = document.createTextNode(carro.brocoli);
+                ccant.appendChild(cctext);
+                cfila.appendChild(cnom);
+                cfila.appendChild(ccant);
+                ctbody.appendChild(cfila);
+            }
+            if (carro.berza > 0) {
+                var cfila = document.createElement("tr");
+                var cnom = document.createElement("td");
+                var cnomtxt = document.createTextNode("berza")
+                cnom.appendChild(cnomtxt);
+                var ccant = document.createElement("td");
+                var cctext = document.createTextNode(carro.berza);
+                ccant.appendChild(cctext);
+                cfila.appendChild(cnom);
+                cfila.appendChild(ccant);
+                ctbody.appendChild(cfila);
+            }
+            if (carro.berenjena > 0) {
+                var cfila = document.createElement("tr");
+                var cnom = document.createElement("td");
+                var cnomtxt = document.createTextNode("berenjena")
+                cnom.appendChild(cnomtxt);
+                var ccant = document.createElement("td");
+                var cctext = document.createTextNode(carro.berenjena);
+                ccant.appendChild(cctext);
+                cfila.appendChild(cnom);
+                cfila.appendChild(ccant);
+                ctbody.appendChild(cfila);
+            }
+            if (carro.pepino > 0) {
+                var cfila = document.createElement("tr");
+                var cnom = document.createElement("td");
+                var cnomtxt = document.createTextNode("pepino")
+                cnom.appendChild(cnomtxt);
+                var ccant = document.createElement("td");
+                var cctext = document.createTextNode(carro.pepino);
+                ccant.appendChild(cctext);
+                cfila.appendChild(cnom);
+                cfila.appendChild(ccant);
+                ctbody.appendChild(cfila);
+            }
+
+            ctable.appendChild(ctbody);
+            divcar.appendChild(ctable);
+        }//fin pintar carro
+
 
 
 
@@ -27,6 +298,15 @@
             req.onreadystatechange = function () {
 
                 if (this.readyState === 4 && this.status === 200) {
+
+                    var car = new Carrito();
+                    //recogemos el carrito guardado
+                    var guardado = JSON.parse(localStorage.getItem('carrito'));
+                    if (guardado != null) {
+                        pintarCarro(guardado);
+
+                    }
+
 
 
                     var duras = JSON.parse(this.responseText);
@@ -68,36 +348,7 @@
                         nFila.value = i;
                         fila.setAttributeNode(nFila);
 
-                        //evento click para la fila
-                        fila.onclick = function () {
-                            var borrar = document.getElementById("borrar")
-                            if (borrar != null) {
-                                borrar.remove();
-                            }
 
-                            //creamos un id par ala nueva fila y poder borrarla en el futuro
-                            var nID = document.createAttribute("id");
-                            nID.value = "borrar";
-                            //insertamos la fila
-                            var newFila = tabla.insertRow(parseInt(this.getAttribute("num")) + 1);
-                            newFila.setAttributeNode(nID);
-                            //cremaos elementos para la fila
-                            var btn = document.createElement("BUTTON");
-                            var val = document.createTextNode("COMPRAR");
-                            var txt = document.createElement("INPUT");
-                            txt.setAttribute("type", "text");
-                            btn.appendChild(val);
-                            //cremos los td
-                            var td1=document.createElement("td");
-                            var td2=document.createElement("td");
-                            td1.appendChild(btn);
-                            td2.appendChild(txt);
-                            //unimos los td
-                            newFila.appendChild(td1);
-                            newFila.appendChild(td2);
-
-
-                        };
 
                         var prod = document.createElement("td");
                         var prodTxt = document.createTextNode(it.producto);
@@ -107,6 +358,66 @@
                         var cant = document.createElement("td");
                         var cantTxt = document.createTextNode(it.kg);
                         cant.appendChild(cantTxt);
+
+                        //evento click para la fila
+                        fila.onclick = function () {
+                            var borrar = document.getElementById("borrar")
+                            if (borrar != null) {
+                                borrar.remove();
+                            }
+                            var celda = this.childNodes[0];
+                            var verdura = celda.childNodes[0].nodeValue;
+                            var celda1 = this.childNodes[1];
+                            var max = celda1.childNodes[0].nodeValue;
+
+                            //creamos un id par ala nueva fila y poder borrarla en el futuro
+                            var nID = document.createAttribute("id");
+                            nID.value = "borrar";
+                            //insertamos la fila
+                            var newFila = tabla.insertRow(parseInt(this.getAttribute("num")) + 1);
+                            newFila.setAttributeNode(nID);
+                            //cremaos elementos para la fila
+                            var btn = document.createElement("BUTTON");
+                            var val = document.createTextNode("AL CARRITO");
+                            var txt = document.createElement("INPUT");
+                            txt.setAttribute("type", "text");
+                            txt.setAttribute("id", "cantitatea");
+                            btn.appendChild(val);
+
+
+
+                            //click en el boton
+                            btn.onclick = function () {
+
+                                var re = /^([0-9])*$/;
+                                var ctt = document.getElementById("cantitatea").value;
+                                var bor = document.getElementById("borrar")
+                                re.exec(ctt)
+
+                                if (!re.exec(ctt) || ctt == "" || ctt > max) {
+                                    alert("introduce un valor numerico menor que la cantidad disponible");
+                                } else {
+                                    car.llenar(verdura, ctt);
+                                    bor.remove();
+                                    localStorage.setItem('carrito', JSON.stringify(car));
+                                    pintarCarro(car);
+                                }
+
+
+
+
+                            };
+                            //cremos los td
+                            var td1 = document.createElement("td");
+                            var td2 = document.createElement("td");
+                            td1.appendChild(btn);
+                            td2.appendChild(txt);
+                            //unimos los td
+                            newFila.appendChild(td1);
+                            newFila.appendChild(td2);
+
+
+                        };
 
                         fila.appendChild(prod);
                         fila.appendChild(cant);
@@ -122,7 +433,7 @@
                     //fusion tbody/tabla  tabla/div
 
                     tabla.appendChild(tBody);
-                    tabla.classList.add("responsive-table");
+                    // tabla.classList.add("responsive-table");
                     tabla.classList.add("highlight");
                     tabla.classList.add("centered");
 
@@ -137,20 +448,25 @@
 </head>
 
 <body>
+    <div class="container">
+        <div class="row" >
 
-    <div class="row">
+            <div  class="col s6" id="container">
+                <input type="button"  class="col s6" value="existencias" id="ex" onclick="existencias()">
+            </div>
 
-        <div clas="row" class="col s3 offset-s3" id="container">
-            <input type="button" value="existencias" id="ex" onclick="existencias()">
+            <div class="col s6" class="right" id="carrito">
+
+            </div>
+
+
+
         </div>
-
-
     </div>
 
 
 
-
-    </div>
+    
 
 
 
